@@ -14,11 +14,14 @@ const headContainer = document.querySelector('.header-container');
 function Header() {
     const head = document.createElement('div'); // Creating structure and text content of elements
     head.classList.add('header');
+
     const dateSpan = document.createElement('span');
     dateSpan.classList.add('date');
     dateSpan.textContent = 'MARCH 28, 2019';
+
     const headText = document.createElement('h1');
     headText.textContent = 'Lambda Times';
+    
     const tempSpan = document.createElement('span');
     tempSpan.classList.add('temp');
     tempSpan.textContent = '98°';

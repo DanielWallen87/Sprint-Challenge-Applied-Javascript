@@ -57,11 +57,17 @@ function CreateCard (data) {
 axios.get('https://lambda-times-backend.herokuapp.com/articles') // Access the topics array via the API
     .then((response) => { // Then do some things with the response
         console.log(response);
-        response.data.articles.javascript.forEach(article => CreateCard(article));
-        response.data.articles.bootstrap.forEach(article => CreateCard(article));
-        response.data.articles.jquery.forEach(article => CreateCard(article));
-        response.data.articles.node.forEach(article => CreateCard(article));
-        response.data.articles.technology.forEach(article => CreateCard(article));
+        let articles = response.data.articles;
+        for (topic in articles) {                   // "For In" loop implementation to make code a bit more concise. 
+          articles[topic].forEach(article => {
+            CreateCard(article);
+          });
+        }
+        // response.data.articles.javascript.forEach(article => CreateCard(article));
+        // response.data.articles.bootstrap.forEach(article => CreateCard(article));
+        // response.data.articles.jquery.forEach(article => CreateCard(article));
+        // response.data.articles.node.forEach(article => CreateCard(article));
+        // response.data.articles.technology.forEach(article => CreateCard(article));
     })
 
     .catch((err) => { // Catch any weird errors or bugs that might happen
