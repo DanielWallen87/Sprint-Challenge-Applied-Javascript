@@ -36,3 +36,9 @@ function Header() {
 }
 
 headContainer.append(Header()); // Appending the function call to its wrapper container
+
+// After creating this, I realized the function could become more reusable like so...
+
+// function Header (dateSpan, headText, tempSpan) while passing in specific text as arguments
+
+//... in which case the syntax would be .textContent = dateSpan, headText, tempSpan (or so I assume)
