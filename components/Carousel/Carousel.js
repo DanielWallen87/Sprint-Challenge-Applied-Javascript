@@ -17,3 +17,40 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function CreateCarousel () {
+  const carousel = document.createElement('div');
+  carousel.classList.add('carousel');
+
+  const leftButton = document.createElement('div');
+  leftButton.classList.add('left-button');
+
+  const rightButton = document.createElement('div');
+  rightButton.classList.add('right-button');
+
+  const img1 = document.createElement('img');
+  img1.src = './assets/carousel/mountains.jpeg';
+
+  const img2 = document.createElement('img');
+  img2.src = './assets/carousel/computer.jpeg';
+
+  const img3 = document.createElement('img');
+  img3.src = './assets/carousel/trees.jpeg';
+
+  const img4 = document.createElement('img');
+  img4.src = './assets/carousel/turntable.jpeg';
+
+  carousel.append(leftButton);
+  carousel.append(rightButton);
+  carousel.append(img1);
+  carousel.append(img2);
+  carousel.append(img3);
+  carousel.append(img4);
+
+  const allImg = document.querySelectorAll('img');
+
+  leftButton.addEventListener('click', function() { // Stopping here as I'm not sure how to continue without changing CSS
+    allImg.animate('fade');
+  })
+  
+}
